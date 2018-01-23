@@ -1,0 +1,36 @@
+.tabs {
+  width: 100%;
+}
+.tabs .tabsLeft {
+  width: 50%;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.tabs .tabsLeft li{
+  flex: 1;
+  color: #ccc;
+}
+.tabs .tabsLeft li a.active {
+  color: white;
+  font-size: 18px;
+}
+
+.tabs .autoComplete {
+  width: 70px;
+}
+.tabs .tabsRight {
+  width: 36%;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+.tabs .tabsRight li{
+  text-align: center;
+  flex: 1;
+  color: white;
+}

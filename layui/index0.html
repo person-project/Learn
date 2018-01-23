@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/css/layui.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 自定渲染 -->
+  <table class="layui-table" lay-data="{height: 315, url:'/json/data.json', page: true, id: 'test'}" lay-filter="autoRender">
+    <thead>
+      <tr>
+        <th lay-data="{field: 'id', width: 80, sort: true}">ID</th>
+        <th lay-data="{field: 'username', width: 80}">用户名</th>
+        <th lay-data="{field: 'sex', width: 80, sort: true}">性别</th>
+        <th lay-data="{field: 'city'}">城市</th>
+        <th lay-data="{field: 'sign'}">签名</th>
+        <th lay-data="{field: 'experiencs', sort: true}">积分</th>
+        <th lay-data="{field: 'score', sort: true}">评分</th>
+        <th lay-data="{field: 'clasify'}">职业</th>
+        <th lay-data="{field: 'wealth', sort: true}">财富</th>
+      </tr>
+    </thead>
+  </table>
+  <script src="/js/layui/layui.all.js" charset="utf-8"></script>
+</body>
+
+</html>

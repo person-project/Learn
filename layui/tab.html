@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/css/layui.css">
+  <title>Tab</title>
+</head>
+
+<body>
+  <div class="layui-tab layui-tab-brief" lay-filter="tabContainer" lay-allowClose="true">
+    <ul class="layui-tab-title">
+      <li class="layui-this">网站设置</li>
+      <li>用户管理</li>
+      <li>权限分配</li>
+      <li>商品管理</li>
+      <li>订单管理</li>
+    </ul>
+    <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">内容1</div>
+      <div class="layui-tab-item">内容2</div>
+      <div class="layui-tab-item">内容3</div>
+      <div class="layui-tab-item">内容4</div>
+      <div class="layui-tab-item">内容5</div>
+    </div>
+  </div>
+  <script src="/js/layui/layui.all.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var element = layui.element;
+    element.on('tab(tabContainer)', function(data) {
+      console.log(data);
+    })
+    setTimeout(function () {
+      element.tabAdd('tabContainer',{
+        title: '物流管理',
+        content: '物流管理'
+      })
+    }, 3000)
+  </script>
+</body>
+
+</html>

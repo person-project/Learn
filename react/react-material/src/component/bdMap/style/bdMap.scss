@@ -1,0 +1,9 @@
+.BdmapContainer {
+  flex: 1;
+  border: 1px solid #eee;
+  .mapTitle {
+    padding: 4px 20px;
+    border-bottom: 1px solid #eee;
+    background: rgb(239, 242, 249);
+  }
+}

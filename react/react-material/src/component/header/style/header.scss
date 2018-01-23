@@ -1,0 +1,32 @@
+.header {
+  ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    width: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    // background-color:#1a427d;
+    // color: rgba(125,188,254,.7);
+    color: #555;
+  }
+  ul li {
+    width: 76px;
+    text-align: center;
+  }
+  ul li.flex2 {
+    flex: 1;
+    text-align: right;
+  }
+  li img {
+    width: 100px;
+  }
+  li.active {
+    // color: #bbe3fc;
+    font-size: 17px;
+    color: black;
+  }
+}
