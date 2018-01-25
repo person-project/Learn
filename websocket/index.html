@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./index.css">
+  <title>Websocket</title>
+</head>
+<body>
+  <div id="container">
+    <div id="content"></div>
+    <div id="input-container">
+      <textarea id="text"></textarea>
+      <button id="submit">发送</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var ws = new WebSocket('ws://localhost:8080');
+    var submit = document.getElementById('submit');
+    var submitTextContainer = document.getElementById('text');
+    var content = document.getElementById('content');
+    submit.addEventListener('click', function () {
+      submitText = submitTextContainer.value;
+      if (submitText && submitText.length > 0) {
+        // var p = document.createElement('p');
+        // p.innerHTML = submitText;
+        // content.appendChild(p);
+        ws.send(submitText);
+      }
+    });
+    ws.onopen = function () {
+      console.log('client: ws connection is open');
+    };
+
+    ws.onmessage = function (e) {
+      console.log('client: received %s', e.data);
+      var p = document.createElement('p');
+      p.innerHTML = e.data;
+      content.appendChild(p);
+    }
+
+
+  </script>
+</body>
+</html>

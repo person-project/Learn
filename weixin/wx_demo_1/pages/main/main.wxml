@@ -1,0 +1,38 @@
+<!--main.wxml-->
+<view class="container">
+  <view class="content">
+    <scroll-view
+      scroll-y="{{true}}"
+    >
+      <swiper indicator-dots="{{indictorDots}}" indicator-color="black" indicator-active-color="white" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" style="height: 240px;">
+        <block wx:for="{{swiperList}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="nav-container">
+        <ul bindtap="changeNavTabs">
+          <block wx:for="{{tabList}}" wx:key="{{index}}">
+            <li class="{{navIndex == index ? 'active': ''}}" data-id="{{index}}">{{item.title}}</li>
+          </block>
+        </ul>
+      </view>
+      <view class="item-container">
+        <swiper bindchange="swiperChange" class="content-item" current="{{navIndex}}">
+          <block wx:for="{{swiperList}}" wx:key="{{index}}">
+            <swiper-item data-id="{{index}}">
+              <image src="{{item.url}}" class="slide-image" bindload="imageLoad" data-id="{{index}}"/>
+              <image src="{{item.url}}" class="slide-image" bindload="imageLoad" data-id="{{index}}"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tab-container" bindtap="changeTab">
+    <navigator url="/pages/index/index" data-id="0" class="{{tabIndex == 0 ? 'active' : ''}}">首页</navigator>
+    <navigator url="/pages/logs/logs" data-id="1" class="{{tabIndex == 1 ? 'active' : ''}}">我的</navigator>
+    <navigator url="/pages/index/index" data-id="2" class="{{tabIndex == 2 ? 'active' : ''}}">登录</navigator>
+  </view>
+</view>
