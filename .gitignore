@@ -2,3 +2,6 @@
 /redux/**.*
 /react/**.*
 /webpack/**.*
+**.*/node_modules/
+**.*/**.*/node_modules/
+**.*/**.*/**.*/node_modules/
